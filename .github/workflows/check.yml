@@ -1,12 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Check latest Chrome version
 
 # Controls when the workflow will run
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 5,20 * * *'
+    - cron:  '16 5,20 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,3 +19,4 @@ jobs:
     steps:
       - uses: browser-actions/setup-chrome@latest
       - run: chrome --version
+      - run: chrome --headless --disable-gpu --dump-dom https://ja3er.com/json
